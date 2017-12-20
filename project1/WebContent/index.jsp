@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-시작
+	홈페이지 제작 시작!!!
 </body>
 </html>
