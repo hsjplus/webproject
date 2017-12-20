@@ -8,5 +8,6 @@
 </head>
 <body>
 	홈페이지 제작 시작!!!
+	집에서 index에 내용 추가 ~
 </body>
 </html>
