@@ -10,8 +10,8 @@
 	<meta name="viewport" content="width=device-width", initial-scale="1">
 	<title>피아셍 쇼핑몰에 오신 것을 환영 합니다</title>
 	<link rel="icon" href="images/TCS-Favicon.ico">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/piasengBoots.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/piasengBoots.css">
 </head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -186,7 +186,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/bootstrap.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/bootstrap.js"></script>
 	</body>
 </html>
