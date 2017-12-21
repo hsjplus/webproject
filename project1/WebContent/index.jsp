@@ -83,9 +83,9 @@
 						<button type="submit" class="btn btn-default">search</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<a href="login/loginForm.html"><button type="button" class="btn btn-default navbar-btn">Login</button></a>
+						<a href="<%=request.getContextPath() %>/login/loginForm.do"><button type="button" class="btn btn-default navbar-btn">Login</button></a>
 						&nbsp;&nbsp;&nbsp;
-						<a href="login/joinForm.html"><button type="button" class="btn btn-default navbar-btn">&nbsp;Join&nbsp;</button></a>
+						<a href="<%=request.getContextPath() %>/login/joinForm.do"><button type="button" class="btn btn-default navbar-btn">&nbsp;Join&nbsp;</button></a>
 					</ul>
 				</div>
 			</div>
