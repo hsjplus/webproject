@@ -24,11 +24,11 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.jsp">PiaSeng Mall</a>
+					<a class="navbar-brand" href="<%= request.getContextPath() %>/index.jsp">PiaSeng Mall</a>
 				</div>
 				<div class="collapsed navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.jsp">INTRO<span class="sr-only"></span></a></li>
+						<li class="active"><a href="<%= request.getContextPath() %>/index.jsp">INTRO<span class="sr-only"></span></a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
 								aria-haspopup="true" aria-expanded="false">Men<span class="caret"></span></a>
@@ -49,7 +49,7 @@
 								<li><a href="#">Daily Look</a></li>
 							</ul>
 						</li>
-						<li><a href="board.jsp">BOARD</a></li>
+						<li><a href="<%= request.getContextPath() %>/board/board.do">BOARD</a></li>
 					</ul>
 					<form class="navbar-form navbar-left">
 						<div class="form-group">
@@ -58,9 +58,9 @@
 						<button type="submit" class="btn btn-default">search</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<a href="login/loginForm.jsp"><button type="button" class="btn btn-default navbar-btn">Login</button></a>
+						<a href="<%= request.getContextPath() %>/login/loginForm.do"><button type="button" class="btn btn-default navbar-btn">Login</button></a>
 						&nbsp;&nbsp;&nbsp;
-						<a href="login/joinForm.jsp"><button type="button" class="btn btn-default navbar-btn">&nbsp;Join&nbsp;</button></a>
+						<a href="<%= request.getContextPath() %>/login/joinForm.do"><button type="button" class="btn btn-default navbar-btn">&nbsp;Join&nbsp;</button></a>
 					</ul>
 				</div>
 			</div>
@@ -80,7 +80,7 @@
 							<div class="media">
 								<div class="media-left">
 									<a href="#">
-										<img class="media-object" src="images/windows.png" alt="개발자 이미지">
+										<img class="media-object" src="../images/windows.png" alt="개발자 이미지">
 									</a>
 								</div>
 								<div class="media-body">
