@@ -19,7 +19,8 @@ public class FrontController extends HttpServlet{
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		// properties이름 받아서 HandlerMapping 통해 Map에 추가 
-		//prop = config.getInitParameter("propLocation");
+		prop = config.getInitParameter("propLocation");
+		System.out.println("prop 위치: " + prop);
 	}
 	
 	
@@ -27,28 +28,29 @@ public class FrontController extends HttpServlet{
 	public void service(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		System.out.println("uri: " + request.getRequestURI());
-		System.out.println("context-path: " + request.getContextPath());
-		
-		//String path ="";
+		String context = request.getContextPath();
+		String uri = request.getRequestURI();
+		uri = uri.substring(context.length());
+				
+		System.out.println("context-path: " + context);
+		System.out.println("uri: " + uri);
 		
 		//3번째 방식 
-		//Controller control = new HandlerMapping(prop).
+		Controller control = new HandlerMapping(prop).getController(uri);
 		
 		//2번째 방식 
-		
+/*		
         Map<String, Controller> mappings = new HashMap<>();
 		mappings.put("/board/list.do", new BoardListController());
 		mappings.put("/login/login.do", new LoginController());
-		
-		Controller control = mappings.get(request.getRequestURI().substring(request.getContextPath().length()));
 
+		Controller control = mappings.get(uri);
+*/		
 		
 		// 1번째 방식
 		/*if(request.getRequestURI().substring(request.getContextPath().length()).equals("/list.do")) {
 			path = new ListController().handleRequest(request, response);
 		}*/
-		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(control.handleRequest(request, response));
 		dispatcher.forward(request, response);

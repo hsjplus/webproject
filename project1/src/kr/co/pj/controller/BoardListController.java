@@ -7,7 +7,7 @@ public class BoardListController implements Controller{
 
 	@Override
 	public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-		return "board/list.jsp";
+		return "/board/list.jsp";
 	}
 
 }
