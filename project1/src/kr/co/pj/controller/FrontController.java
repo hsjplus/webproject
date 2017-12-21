@@ -1,8 +1,6 @@
 package kr.co.pj.controller;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -35,22 +33,8 @@ public class FrontController extends HttpServlet{
 		System.out.println("context-path: " + context);
 		System.out.println("uri: " + uri);
 		
-		//3번째 방식 
+		
 		Controller control = new HandlerMapping(prop).getController(uri);
-		
-		//2번째 방식 
-/*		
-        Map<String, Controller> mappings = new HashMap<>();
-		mappings.put("/board/list.do", new BoardListController());
-		mappings.put("/login/login.do", new LoginController());
-
-		Controller control = mappings.get(uri);
-*/		
-		
-		// 1번째 방식
-		/*if(request.getRequestURI().substring(request.getContextPath().length()).equals("/list.do")) {
-			path = new ListController().handleRequest(request, response);
-		}*/
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(control.handleRequest(request, response));
 		dispatcher.forward(request, response);
