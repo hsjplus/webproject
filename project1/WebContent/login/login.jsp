@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="${pageContext.request.contextPath}/board/list.do">게시판</a><br/>
-	<a href="${pageContext.request.contextPath}/login/login.do">로그인</a>
+	로그인 출력
 </body>
 </html>
