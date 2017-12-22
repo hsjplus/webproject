@@ -1,6 +1,9 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="kr.co.pj.product.vo.ProductVO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!--  
 	주석 아는만큼 달겠습니다.
 	어느정도 시간 지나면 주석 다 지우겠습니다.
@@ -10,6 +13,13 @@
 <%
 	List<ProductVO> list = new ArrayList<>();
 
+	for(int i = 1; i <= 9 ; i++){
+		ProductVO product = new ProductVO("name"+i,"사진원위치","사진저장위치"
+			, 10000, 0, "2017-12-22", "type"); 
+		list.add(product);
+	}
+
+	pageContext.setAttribute("list", list);
 %>
 <!DOCTYPE html>
 <html>
@@ -106,6 +116,7 @@
 				<p class="text-center">피아셍은 의류 전문 사이트입니다. </p>
 				<p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">둘러보기</a></p>
 			</div>
+			
 			<div class="row">
 				<div class="col-md-4">
 					<h4>PiaSeng의 특징</h4>
@@ -125,31 +136,30 @@
 			</div>
 			<hr/>
 			
-			<!-- 상품 row 한 묶음 -->
-			<div class="row">
-            <div class="col-xs-12 col-lg-3">
-              <h2>상품명</h2>
-              <p>사진</p>
-              <p>조회수</p>
-              <p>날짜</p>
-            </div>
-            <div class="col-xs-12 col-lg-3">
-              <h2>상품2</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            </div>
-            <div class="col-xs-12 col-lg-3">
-              <h2>상품3</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            </div>
-            
-            <div class="col-xs-12 col-lg-3">
-              <h2>상품4</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            </div>
-            
-            
-          </div>
 			
+			<!--  상품 게시 부분 -->
+			<c:forEach items="${ list }" var="product" varStatus="loop">
+				
+	            <c:if test="${ loop.count % 4 eq 1 and loop.count != 1}">
+	            	</div>
+	            </c:if>
+
+				<c:if test="${ loop.count % 4 eq 1}">
+					<div class="row">
+				</c:if>
+				
+				<!-- 상품 row 한 묶음 -->
+	            <div class="col-xs-12 col-lg-3">
+	              <h2>상품명: ${ product.name }</h2>
+	              <p>사진: ${ product.imgOriName }</p>
+	              <p>조회수: ${ product.viewCnt }</p>
+	              <p>날짜: ${ product.date }</p>
+	            </div>
+	            
+            </c:forEach>
+            </div>
+            <!--  상품 게시 끝 -->
+            
 			<hr/>
 			
 			<div class="panel panel-primary">
