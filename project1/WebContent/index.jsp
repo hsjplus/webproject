@@ -1,33 +1,33 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!--  
-	ÁÖ¼® ¾Æ´Â¸¸Å­ ´Ş°Ú½À´Ï´Ù.
-	¾î´ÀÁ¤µµ ½Ã°£ Áö³ª¸é ÁÖ¼® ´Ù Áö¿ì°Ú½À´Ï´Ù.
+	ì£¼ì„ ì•„ëŠ”ë§Œí¼ ë‹¬ê² ìŠµë‹ˆë‹¤.
+	ì–´ëŠì •ë„ ì‹œê°„ ì§€ë‚˜ë©´ ì£¼ì„ ë‹¤ ì§€ìš°ê² ìŠµë‹ˆë‹¤.
 	
-	¸µÅ©´Â °É·ÁÀÖ´Â°Íµµ ÀÖ°í ¾ø´Â°Íµµ ÀÖ´Âµ¥, #À¸·Î °Ë»öÇÏ½Ã¸é ¿¬°áµÇÁö ¾Ê´Â  ¸µÅ©°¡ ³ª¿À°ÔµË´Ï´Ù.
+	ë§í¬ëŠ” ê±¸ë ¤ìˆëŠ”ê²ƒë„ ìˆê³  ì—†ëŠ”ê²ƒë„ ìˆëŠ”ë°, #ìœ¼ë¡œ ê²€ìƒ‰í•˜ì‹œë©´ ì—°ê²°ë˜ì§€ ì•ŠëŠ”  ë§í¬ê°€ ë‚˜ì˜¤ê²Œë©ë‹ˆë‹¤.
 -->
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<!-- ÃÊ±âºñÀ²Àº 1.0ÀÌ´Ï±î ÀÏ¹İÀûÀÎ ºñÀ²·ÎÇØÁÖ°Ú´Ù´Â ÀÇ¹Ì.
-		À¥»çÀÌÆ®ÀÇ ³Êºñ´Â, ÀåÄ¡ÀÇ ³Êºñ¿Í ÀÏÄ¡ÇÑ´Ù. ÇöÀç Á¢¼ÓÇÑ µğ¹ÙÀÌ½º ³Êºñ¿¡ ¸Â°Ô º¸¿©ÁÖ°Ú´Ù.
+	<!-- ì´ˆê¸°ë¹„ìœ¨ì€ 1.0ì´ë‹ˆê¹Œ ì¼ë°˜ì ì¸ ë¹„ìœ¨ë¡œí•´ì£¼ê² ë‹¤ëŠ” ì˜ë¯¸.
+		ì›¹ì‚¬ì´íŠ¸ì˜ ë„ˆë¹„ëŠ”, ì¥ì¹˜ì˜ ë„ˆë¹„ì™€ ì¼ì¹˜í•œë‹¤. í˜„ì¬ ì ‘ì†í•œ ë””ë°”ì´ìŠ¤ ë„ˆë¹„ì— ë§ê²Œ ë³´ì—¬ì£¼ê² ë‹¤.
 	 -->
 	<meta name="viewport" content="width=device-width", initial-scale="1">
-	<title>ÇÇ¾Æ¼Ä ¼îÇÎ¸ô¿¡ ¿À½Å °ÍÀ» È¯¿µ ÇÕ´Ï´Ù</title>
+	<title>í”¼ì•„ì… ì‡¼í•‘ëª°ì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜ í•©ë‹ˆë‹¤</title>
 	
-	<!-- À¥ºê¶ó¿ìÀú ¸ÇÀ§¿¡ Ã¢¿ŞÂÊ¿¡ ºÙ´Â ¾ÆÀÌÄÜ ¸ğ¾ç -->
+	<!-- ì›¹ë¸Œë¼ìš°ì € ë§¨ìœ„ì— ì°½ì™¼ìª½ì— ë¶™ëŠ” ì•„ì´ì½˜ ëª¨ì–‘ -->
 	<link rel="icon" href="images/TCS-Favicon.ico">
 	
-	<!-- ºÎÆ®½ºÆ®·¦¿¡¼­ Á¦°øÇÏ´Â CSSÆÄÀÏ. ¾Æ·¡ µÎ°³´Â ¸µÅ© °Å´Â°ÍÀÌ ÁÁÀ½ -->
+	<!-- ë¶€íŠ¸ìŠ¤íŠ¸ë©ì—ì„œ ì œê³µí•˜ëŠ” CSSíŒŒì¼. ì•„ë˜ ë‘ê°œëŠ” ë§í¬ ê±°ëŠ”ê²ƒì´ ì¢‹ìŒ -->
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- ÇÇ¾Æ¼ÄºÎÆ®.CSS´Â Á¦°¡ Á÷Á¢ Á¦ÀÛÇÑ CSSÆÄÀÏÀÌ¶ó¼­ º¯µ¿ÇÏ¼Åµµ µË´Ï´Ù. -->
+	<!-- í”¼ì•„ì…ë¶€íŠ¸.CSSëŠ” ì œê°€ ì§ì ‘ ì œì‘í•œ CSSíŒŒì¼ì´ë¼ì„œ ë³€ë™í•˜ì…”ë„ ë©ë‹ˆë‹¤. -->
 	<link rel="stylesheet" type="text/css" href="css/piasengBoots.css">
 </head>
 	<body>
 		<style type="text/css">
 		/*
-			Á¡º¸Æ®·ĞÀº Á¤ÇØÁø Å¬·¡½º. ÃÖÃÊ Å«È­¸é ¿ªÇÒ
+			ì ë³´íŠ¸ë¡ ì€ ì •í•´ì§„ í´ë˜ìŠ¤. ìµœì´ˆ í°í™”ë©´ ì—­í• 
 		*/
 			.jumbotron {
 				background-image: url('images/jumbotronBackground.jpg');
@@ -37,7 +37,7 @@
 			}
 		</style>
 		<!-- 
-			navbar »ó´Ü ¸ÇÀ§¿¡ À§Ä¡ Å©·Ò °³¹ßÀÚ µµ±¸·Î º¸½Ã¸é ´õ ½±°Ô º¸½Ç¼ö ÀÖ½À´Ï´Ù. 	
+			navbar ìƒë‹¨ ë§¨ìœ„ì— ìœ„ì¹˜ í¬ë¡¬ ê°œë°œì ë„êµ¬ë¡œ ë³´ì‹œë©´ ë” ì‰½ê²Œ ë³´ì‹¤ìˆ˜ ìˆìŠµë‹ˆë‹¤. 	
 		-->
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -58,8 +58,8 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
 								aria-haspopup="true" aria-expanded="false">Men<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">°Ü¿ï</a></li>
-								<li><a href="#">º½</a></li>
+								<li><a href="#">ê²¨ìš¸</a></li>
+								<li><a href="#">ë´„</a></li>
 								<li><a href="#">Pomade Style</a></li>
 								<li><a href="#">Daily Look</a></li>
 							</ul>
@@ -68,8 +68,8 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
 								aria-haspopup="true" aria-expanded="false">Women<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">°Ü¿ï</a></li>
-								<li><a href="#">º½</a></li>
+								<li><a href="#">ê²¨ìš¸</a></li>
+								<li><a href="#">ë´„</a></li>
 								<li><a href="#">AshyColor Style</a></li>
 								<li><a href="#">Daily Look</a></li>
 							</ul>
@@ -78,7 +78,7 @@
 					</ul>
 					<form class="navbar-form navbar-left">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä"/>
+							<input type="text" class="form-control" placeholder="ë‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”"/>
 						</div>
 						<button type="submit" class="btn btn-default">search</button>
 					</form>
@@ -93,64 +93,89 @@
 		<br/><br/>
 		
 		<!-- 
-			Á¡º¸Æ®·Ğ ¹× ¾Æ·¡ ÄÁÅÙÆ® º¸°ü Ã¢ 
+			ì ë³´íŠ¸ë¡  ë° ì•„ë˜ ì»¨í…íŠ¸ ë³´ê´€ ì°½ 
 		-->
 		<div class="container">
 			<div class="jumbotron">
 				<h1 class="text-center" style="color: #7878E1;"><span style="color: #FF1493;">P</span>ia Seng</h1>
-				<p class="text-center">ÇÇ¾Æ¼ÄÀº ÀÇ·ù Àü¹® »çÀÌÆ®ÀÔ´Ï´Ù. </p>
-				<p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">µÑ·¯º¸±â</a></p>
+				<p class="text-center">í”¼ì•„ì…ì€ ì˜ë¥˜ ì „ë¬¸ ì‚¬ì´íŠ¸ì…ë‹ˆë‹¤. </p>
+				<p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">ë‘˜ëŸ¬ë³´ê¸°</a></p>
 			</div>
 			<div class="row">
 				<div class="col-md-4">
-					<h4>PiaSengÀÇ Æ¯Â¡</h4>
-					<p>PiaSengÀº ´Ù¸¥ ¼îÇÎ¸ô°ú´Â Â÷¿øÀÌ ´Ù¸¥ ±ò²ûÇÑ ±¸¼ºÀ» º¸¿©Áİ´Ï´Ù.</p>
-					<p><a class="btn btn-default" data-target="#modal" data-toggle="modal">ÀÚ¼¼È÷ ¾Ë¾Æº¸±â</a></p>
+					<h4>PiaSengì˜ íŠ¹ì§•</h4>
+					<p>PiaSengì€ ë‹¤ë¥¸ ì‡¼í•‘ëª°ê³¼ëŠ” ì°¨ì›ì´ ë‹¤ë¥¸ ê¹”ë”í•œ êµ¬ì„±ì„ ë³´ì—¬ì¤ë‹ˆë‹¤.</p>
+					<p><a class="btn btn-default" data-target="#modal" data-toggle="modal">ìì„¸íˆ ì•Œì•„ë³´ê¸°</a></p>
 				</div>
 				<div class="col-md-4">
 					<h4>Width</h4>
-					<p>¿©·¯ºĞ¿¡°Ô µü ¸Â´Â Æ¯º°ÇÑ »óÇ°Àº ºĞ¸íÈ÷ Á¸Àç ÇÕ´Ï´Ù.</p>
-					<p><a class="btn btn-default" href="#">ÀÚ¼¼È÷ ¾Ë¾Æº¸±â</a></p>
+					<p>ì—¬ëŸ¬ë¶„ì—ê²Œ ë”± ë§ëŠ” íŠ¹ë³„í•œ ìƒí’ˆì€ ë¶„ëª…íˆ ì¡´ì¬ í•©ë‹ˆë‹¤.</p>
+					<p><a class="btn btn-default" href="#">ìì„¸íˆ ì•Œì•„ë³´ê¸°</a></p>
 				</div>
 				<div class="col-md-4">
 					<h4>Height</h4>
-					<p>Quality is higher than Width.<br/>¼Õ³¡À¸·Î ¸¸Áö´Â ¼ø°£ ´Ù¸¥ ¼¼°è°¡ ¿­¸³´Ï´Ù.</p>
-					<p><a class="btn btn-default" href="#">ÀÚ¼¼È÷ ¾Ë¾Æº¸±â</a></p>
+					<p>Quality is higher than Width.<br/>ì†ëìœ¼ë¡œ ë§Œì§€ëŠ” ìˆœê°„ ë‹¤ë¥¸ ì„¸ê³„ê°€ ì—´ë¦½ë‹ˆë‹¤.</p>
+					<p><a class="btn btn-default" href="#">ìì„¸íˆ ì•Œì•„ë³´ê¸°</a></p>
 				</div>
 			</div>
 			<hr/>
+			
+			<div class="row">
+            <div class="col-xs-12 col-lg-3">
+              <h2>ìƒí’ˆ1</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            </div>
+            <div class="col-xs-12 col-lg-3">
+              <h2>ìƒí’ˆ2</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            </div>
+            <div class="col-xs-12 col-lg-3">
+              <h2>ìƒí’ˆ3</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            </div>
+            
+            <div class="col-xs-12 col-lg-3">
+              <h2>ìƒí’ˆ4</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            </div>
+            
+            
+          </div>
+			
+			<hr/>
+			
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title"><span class="glyphicon glyphicon-leaf"></span>&nbsp;&nbsp;12¿ù ½Å»óÇ° ¸ñ·Ï</h3>
+					<h3 class="panel-title"><span class="glyphicon glyphicon-leaf"></span>&nbsp;&nbsp;12ì›” ì‹ ìƒí’ˆ ëª©ë¡</h3>
 				</div>
 				<div class="panel-body">
 					<div class="media">
 						<div class="media-left">
-							<a href="#"><img style="width: 96px; height: 96px;" class="media-object" src="images/BD.ico" alt="12¿ù ½Å»óÇ°"></a>
+							<a href="#"><img style="width: 96px; height: 96px;" class="media-object" src="images/BD.ico" alt="12ì›” ì‹ ìƒí’ˆ"></a>
 						</div>
 						<div class="media-body">
-							<h4 class="media-heading"><a href="#">c¾ğ¾î ±âÃÊ ÇÁ·Î±×·¡¹Ö °­ÀÇ</a>&nbsp;<span class="badge">New</span></h4>
-							C¾ğ¾î °­ÀÇ´Â ±âÃÊ ÇÁ·Î±×·¡¹Ö °­ÀÇÀÔ´Ï´Ù. Ã³À½ ÇÁ·Î±×·¡¹ÖÀ» Á¢ÇÏ´Â ÀÔ¹®ÀÚ°¡ µè±â¿¡ ÀûÇÕÇÑ °­ÀÇÀÔ´Ï´Ù.
+							<h4 class="media-heading"><a href="#">cì–¸ì–´ ê¸°ì´ˆ í”„ë¡œê·¸ë˜ë° ê°•ì˜</a>&nbsp;<span class="badge">New</span></h4>
+							Cì–¸ì–´ ê°•ì˜ëŠ” ê¸°ì´ˆ í”„ë¡œê·¸ë˜ë° ê°•ì˜ì…ë‹ˆë‹¤. ì²˜ìŒ í”„ë¡œê·¸ë˜ë°ì„ ì ‘í•˜ëŠ” ì…ë¬¸ìê°€ ë“£ê¸°ì— ì í•©í•œ ê°•ì˜ì…ë‹ˆë‹¤.
 						</div>
 					</div>
 					<hr/>
 					<div class="media">
 						<div class="media-left">
-							<a href="#"><img style="width: 96px; height: 96px;" class="media-object" src="images/BD.ico" alt="12¿ù ½Å»óÇ°"></a>
+							<a href="#"><img style="width: 96px; height: 96px;" class="media-object" src="images/BD.ico" alt="12ì›” ì‹ ìƒí’ˆ"></a>
 						</div>
 						<div class="media-body">
-							<h4 class="media-heading"><a href="#">Java ±âÃÊ ÇÁ·Î±×·¡¹Ö °­ÀÇ</a>&nbsp;<span class="badge">New</span></h4>
-							C¾ğ¾î °­ÀÇ´Â ±âÃÊ ÇÁ·Î±×·¡¹Ö °­ÀÇÀÔ´Ï´Ù. Ã³À½ ÇÁ·Î±×·¡¹ÖÀ» Á¢ÇÏ´Â ÀÔ¹®ÀÚ°¡ µè±â¿¡ ÀûÇÕÇÑ °­ÀÇÀÔ´Ï´Ù.
+							<h4 class="media-heading"><a href="#">Java ê¸°ì´ˆ í”„ë¡œê·¸ë˜ë° ê°•ì˜</a>&nbsp;<span class="badge">New</span></h4>
+							Cì–¸ì–´ ê°•ì˜ëŠ” ê¸°ì´ˆ í”„ë¡œê·¸ë˜ë° ê°•ì˜ì…ë‹ˆë‹¤. ì²˜ìŒ í”„ë¡œê·¸ë˜ë°ì„ ì ‘í•˜ëŠ” ì…ë¬¸ìê°€ ë“£ê¸°ì— ì í•©í•œ ê°•ì˜ì…ë‹ˆë‹¤.
 						</div>
 					</div>
 					<hr/>
 					<div class="media">
 						<div class="media-left">
-							<a href="#"><img style="width: 96px; height: 96px;" class="media-object" src="images/BD.ico" alt="12¿ù ½Å»óÇ°"></a>
+							<a href="#"><img style="width: 96px; height: 96px;" class="media-object" src="images/BD.ico" alt="12ì›” ì‹ ìƒí’ˆ"></a>
 						</div>
 						<div class="media-body">
-							<h4 class="media-heading"><a href="#">Å×½ºÆ®3 ±âÃÊ ÇÁ·Î±×·¡¹Ö °­ÀÇ</a>&nbsp;<span class="badge">New</span></h4>
-							C¾ğ¾î °­ÀÇ´Â ±âÃÊ ÇÁ·Î±×·¡¹Ö °­ÀÇÀÔ´Ï´Ù. Ã³À½ ÇÁ·Î±×·¡¹ÖÀ» Á¢ÇÏ´Â ÀÔ¹®ÀÚ°¡ µè±â¿¡ ÀûÇÕÇÑ °­ÀÇÀÔ´Ï´Ù.
+							<h4 class="media-heading"><a href="#">í…ŒìŠ¤íŠ¸3 ê¸°ì´ˆ í”„ë¡œê·¸ë˜ë° ê°•ì˜</a>&nbsp;<span class="badge">New</span></h4>
+							Cì–¸ì–´ ê°•ì˜ëŠ” ê¸°ì´ˆ í”„ë¡œê·¸ë˜ë° ê°•ì˜ì…ë‹ˆë‹¤. ì²˜ìŒ í”„ë¡œê·¸ë˜ë°ì„ ì ‘í•˜ëŠ” ì…ë¬¸ìê°€ ë“£ê¸°ì— ì í•©í•œ ê°•ì˜ì…ë‹ˆë‹¤.
 						</div>
 					</div>
 				</div>
@@ -162,12 +187,12 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							PiaSengÀÇ Æ¯Â¡
+							PiaSengì˜ íŠ¹ì§•
 							<button class="close" data-dismiss="modal">&times;</button>
 						</div>
 						<div class="modal-body" style="text-align: center;">
-							<h4>ÀúÈñ ¼­ºñ½ºÀÇ Æ¯Â¡Àº ½Ç½Ã°£ ¼ÒÅë¿¡ ÀÖ½À´Ï´Ù.<br/>
-							Æ¯È÷ ½Ç½Ã°£ Ã¤ÆÃ¼­ºñ½º¸¦ ÅëÇÏ¿©, ºÎ´ã¾ø´Â »ó´ãÀ» ¹ŞÀ¸½Ç ¼ö ÀÖ½À´Ï´Ù.<br/><br/></h4>
+							<h4>ì €í¬ ì„œë¹„ìŠ¤ì˜ íŠ¹ì§•ì€ ì‹¤ì‹œê°„ ì†Œí†µì— ìˆìŠµë‹ˆë‹¤.<br/>
+							íŠ¹íˆ ì‹¤ì‹œê°„ ì±„íŒ…ì„œë¹„ìŠ¤ë¥¼ í†µí•˜ì—¬, ë¶€ë‹´ì—†ëŠ” ìƒë‹´ì„ ë°›ìœ¼ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.<br/><br/></h4>
 							<hr/>
 							<img src="images/imgpreview.ico" id="imagepreview" style="width: 256px; height: 256px;">
 							<hr/>
@@ -177,18 +202,18 @@
 			</div>
 		</div>
 		<!--
-			footer¿µ¿ª.   
+			footerì˜ì—­.   
 		-->
 		<footer style="background-color: #000000; color: #ffffff">
 			<div class="container">
 				<br/>
 				<div class="row">
-					<div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy; 2017</h5><h5>±Ç¿ëÈÆ(Yonghoon Kwon)</h5></div>
-					<div class="col-sm-4"><h4>´ëÇ¥ÀÚ ¼Ò°³</h4><p>Àú´Â PiaSengÀÇ ´ëÇ¥ ±Ç¿ëÈÆÀÔ´Ï´Ù. ´õÁ¶Àº ÄÄÇ»ÅÍÇĞ¿ø¿¡¼­ °øºÎÁßÀÌ¸ç À¥ °³¹ß¿¡ °ü½ÉÀÌ ¸¹½À´Ï´Ù.</p></div>
-					<div class="col-sm-2"><h4 style="text-align: center;">³×ºñ°ÔÀÌ¼Ç</h4>
+					<div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy; 2017</h5><h5>ê¶Œìš©í›ˆ(Yonghoon Kwon)</h5></div>
+					<div class="col-sm-4"><h4>ëŒ€í‘œì ì†Œê°œ</h4><p>ì €ëŠ” PiaSengì˜ ëŒ€í‘œ ê¶Œìš©í›ˆì…ë‹ˆë‹¤. ë”ì¡°ì€ ì»´í“¨í„°í•™ì›ì—ì„œ ê³µë¶€ì¤‘ì´ë©° ì›¹ ê°œë°œì— ê´€ì‹¬ì´ ë§ìŠµë‹ˆë‹¤.</p></div>
+					<div class="col-sm-2"><h4 style="text-align: center;">ë„¤ë¹„ê²Œì´ì…˜</h4>
 						<div class="list-group">
-							<a href="#" class="list-group-item">¼Ò°³</a>
-							<a href="#" class="list-group-item">¼Ò°³</a>
+							<a href="#" class="list-group-item">ì†Œê°œ</a>
+							<a href="#" class="list-group-item">ì†Œê°œ</a>
 						</div>
 					</div>
 					<div class="col-sm-2"><h4 style="text-align: center;">SNS</h4>
@@ -198,13 +223,13 @@
 						</div>
 					</div>
 					<div class="col-sm-2">
-						<h4 style="text-align: center;"><span class="glyphicon glyphicon-ok">&nbsp;by ±Ç¿ëÈÆ</span></h4>
+						<h4 style="text-align: center;"><span class="glyphicon glyphicon-ok">&nbsp;by ê¶Œìš©í›ˆ, í™ì„ì¤€ </span></h4>
 					</div>
 				</div>
 			</div>
 		</footer>
 		<!-- 
-			Core tag. ¾Æ·¡ µÎ°³´Â ºÎÆ®½ºÆ®·¦À» À§ÇÑ ÅÂ±×.(º¯µ¿ ºÒ°¡)
+			Core tag. ì•„ë˜ ë‘ê°œëŠ” ë¶€íŠ¸ìŠ¤íŠ¸ë©ì„ ìœ„í•œ íƒœê·¸.(ë³€ë™ ë¶ˆê°€)
 		-->
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/bootstrap.js"></script>
