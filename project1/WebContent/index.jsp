@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!--  
@@ -6,6 +7,10 @@
 	
 	링크는 걸려있는것도 있고 없는것도 있는데, #으로 검색하시면 연결되지 않는  링크가 나오게됩니다.
 -->
+<%
+	List<ProductVO> list = new ArrayList<>();
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,10 +125,13 @@
 			</div>
 			<hr/>
 			
+			<!-- 상품 row 한 묶음 -->
 			<div class="row">
             <div class="col-xs-12 col-lg-3">
-              <h2>상품1</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2>상품명</h2>
+              <p>사진</p>
+              <p>조회수</p>
+              <p>날짜</p>
             </div>
             <div class="col-xs-12 col-lg-3">
               <h2>상품2</h2>
