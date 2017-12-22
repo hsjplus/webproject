@@ -1,3 +1,4 @@
+<%@page import="kr.co.pj.product.dao.ProductDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="kr.co.pj.product.vo.ProductVO"%>
 <%@page import="java.util.List"%>
@@ -11,16 +12,10 @@
 	링크는 걸려있는것도 있고 없는것도 있는데, #으로 검색하시면 연결되지 않는  링크가 나오게됩니다.
 -->
 <%
-	List<ProductVO> list = new ArrayList<>();
-
-	for(int i = 1; i <= 9 ; i++){
-		ProductVO product = new ProductVO("name"+i,"사진원위치","사진저장위치"
-			, 10000, 0, "2017-12-22", "type"); 
-		list.add(product);
-	}
-
+	List<ProductVO> list = new ProductDAO().selectAllProduct();
 	pageContext.setAttribute("list", list);
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,6 +45,7 @@
 				text-shadow: black 0.2em 0.2em 0.2em;
 				color: white;
 			}
+		
 		</style>
 		<!-- 
 			navbar 상단 맨위에 위치 크롬 개발자 도구로 보시면 더 쉽게 보실수 있습니다. 	
@@ -150,10 +146,11 @@
 				
 				<!-- 상품 row 한 묶음 -->
 	            <div class="col-xs-12 col-lg-3">
-	              <h2>상품명: ${ product.name }</h2>
-	              <p>사진: ${ product.imgOriName }</p>
-	              <p>조회수: ${ product.viewCnt }</p>
-	              <p>날짜: ${ product.date }</p>
+	              <h2>상품명: ${ product.pname }</h2>
+	              <img src="${ product.pimg_save_nm }" width="100" height="100"/></p>
+	              <p>가격: ${ product.price }</p>
+	              <p>조회수: ${ product.view_cnt }</p>
+	              <p>날짜: ${ product.reg_date }</p>
 	            </div>
 	            
             </c:forEach>

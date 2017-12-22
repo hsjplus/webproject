@@ -2,52 +2,73 @@ package kr.co.pj.product.vo;
 
 public class ProductVO {
 	
-	private String name;
-	private String imgOriName;
-	private String imgSaveName;
+	private int product_cd;
+	private String pname;
+	private String pimg_ori_nm;
+	private String pimg_save_nm;
+	private String pcontent;
 	private int price;
-	private int viewCnt;
-	private String date;
-	private String type;
+	private int view_cnt;
+	private String reg_date;
+	private String ptype;
 	
 	public ProductVO() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public ProductVO(String name, String imgOriName, String imgSaveName, int price, int viewCnt, String date,
-			String type) {
+	public ProductVO(int product_cd, String pname, String pimg_ori_nm, String pimg_save_nm, String pcontent, int price,
+			int view_cnt, String reg_date, String ptype) {
 		super();
-		this.name = name;
-		this.imgOriName = imgOriName;
-		this.imgSaveName = imgSaveName;
+		this.product_cd = product_cd;
+		this.pname = pname;
+		this.pimg_ori_nm = pimg_ori_nm;
+		this.pimg_save_nm = pimg_save_nm;
+		this.pcontent = pcontent;
 		this.price = price;
-		this.viewCnt = viewCnt;
-		this.date = date;
-		this.type = type;
+		this.view_cnt = view_cnt;
+		this.reg_date = reg_date;
+		this.ptype = ptype;
 	}
 
-	public String getName() {
-		return name;
+	public int getProduct_cd() {
+		return product_cd;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setProduct_cd(int product_cd) {
+		this.product_cd = product_cd;
 	}
 
-	public String getImgOriName() {
-		return imgOriName;
+	public String getPname() {
+		return pname;
 	}
 
-	public void setImgOriName(String imgOriName) {
-		this.imgOriName = imgOriName;
+	public void setPname(String pname) {
+		this.pname = pname;
 	}
 
-	public String getImgSaveName() {
-		return imgSaveName;
+	public String getPimg_ori_nm() {
+		return pimg_ori_nm;
 	}
 
-	public void setImgSaveName(String imgSaveName) {
-		this.imgSaveName = imgSaveName;
+	public void setPimg_ori_nm(String pimg_ori_nm) {
+		this.pimg_ori_nm = pimg_ori_nm;
+	}
+
+	public String getPimg_save_nm() {
+		return pimg_save_nm;
+	}
+
+	public void setPimg_save_nm(String pimg_save_nm) {
+		this.pimg_save_nm = pimg_save_nm;
+	}
+
+	public String getPcontent() {
+		return pcontent;
+	}
+
+	public void setPcontent(String pcontent) {
+		this.pcontent = pcontent;
 	}
 
 	public int getPrice() {
@@ -58,35 +79,36 @@ public class ProductVO {
 		this.price = price;
 	}
 
-	public int getViewCnt() {
-		return viewCnt;
+	public int getView_cnt() {
+		return view_cnt;
 	}
 
-	public void setViewCnt(int viewCnt) {
-		this.viewCnt = viewCnt;
+	public void setView_cnt(int view_cnt) {
+		this.view_cnt = view_cnt;
 	}
 
-	public String getDate() {
-		return date;
+	public String getReg_date() {
+		return reg_date;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setReg_date(String reg_date) {
+		this.reg_date = reg_date;
 	}
 
-	public String getType() {
-		return type;
+	public String getPtype() {
+		return ptype;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setPtype(String ptype) {
+		this.ptype = ptype;
 	}
 
 	@Override
 	public String toString() {
-		return "ProductVO [name=" + name + ", imgOriName=" + imgOriName + ", imgSaveName=" + imgSaveName + ", price="
-				+ price + ", viewCnt=" + viewCnt + ", date=" + date + ", type=" + type + "]";
+		return "ProductVO [product_cd=" + product_cd + ", pname=" + pname + ", pimg_ori_nm=" + pimg_ori_nm
+				+ ", pimg_save_nm=" + pimg_save_nm + ", pcontent=" + pcontent + ", price=" + price + ", view_cnt="
+				+ view_cnt + ", reg_date=" + reg_date + ", ptype=" + ptype + "]";
 	}
-		
+	
 	
 }
