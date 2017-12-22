@@ -7,7 +7,7 @@
   	<servlet-class>kr.co.pj.controller.FrontController</servlet-class>
   	<init-param>
       <param-name>propLocation</param-name>
-      <param-value>D:\\Lecture\\web-project3\\project1\\bean.properties</param-value>
+      <param-value>C:\\Users\\kim hyun min\\Desktop\\홍석준\\web-project\\project1\\bean.properties</param-value>
     </init-param>
   </servlet>
   
