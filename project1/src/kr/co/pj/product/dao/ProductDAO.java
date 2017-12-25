@@ -22,7 +22,7 @@ public class ProductDAO {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" select pname, pimg_save_nm,  price, view_cnt ");
 		sql.append(" , to_char(reg_date, 'yyyy-mm-dd') reg_date ");
-		sql.append(" from product ");
+		sql.append(" from product order by product_cd asc ");
 		
 		try {
 			Connection conn = new ConnectionFactory().getConnection();
@@ -48,5 +48,32 @@ public class ProductDAO {
 		return productList;
 	}
 	
+	/**
+	 *  상품 입력 메소드 
+	 */
+	
+	public void insertFile(ProductVO product) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" insert into product ");
+		sql.append(" values(product_cd_idx.nextval, ?, ?, ?, ?, ?, 0, sysdate, ? ) ");
+		
+		try(
+			Connection conn = new ConnectionFactory().getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());	
+		){
+			int loc = 1;
+			pstmt.setString(loc++, product.getPname() );
+			pstmt.setString(loc++, product.getPimg_ori_nm() );
+			pstmt.setString(loc++, product.getPimg_save_nm() );
+			pstmt.setString(loc++, product.getPcontent() );
+			pstmt.setInt(loc++, product.getPrice() );
+			pstmt.setString(loc++, product.getPtype());
+			
+			pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	
 }

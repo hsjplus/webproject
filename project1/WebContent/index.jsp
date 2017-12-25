@@ -147,7 +147,7 @@
 				<!-- 상품 row 한 묶음 -->
 	            <div class="col-xs-12 col-lg-3">
 	              <h2>상품명: ${ product.pname }</h2>
-	              <img src="${ product.pimg_save_nm }" width="100" height="100"/></p>
+	              <img src="/project1/images/${ product.pimg_save_nm }" width="150" height="150"/></p>
 	              <p>가격: ${ product.price }</p>
 	              <p>조회수: ${ product.view_cnt }</p>
 	              <p>날짜: ${ product.reg_date }</p>
@@ -156,7 +156,11 @@
             </c:forEach>
             </div>
             <!--  상품 게시 끝 -->
+          
             
+            <a href="<%=request.getContextPath() %>/product/productForm.jsp">
+            <button type="button" class="btn btn-default navbar-btn">상품 입력</button></a>
+			        
 			<hr/>
 			
 			<div class="panel panel-primary">
