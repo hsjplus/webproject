@@ -15,19 +15,23 @@ public class ProductDAO {
 	 * 상품 전체 조회 메소드 
 	 */
 	
-	public List<ProductVO> selectAllProduct(){
+	public List<ProductVO> selectAllProduct(int idx){
 		
 		List<ProductVO> productList = new ArrayList<>();
 		
 		StringBuilder sql = new StringBuilder();
 		sql.append(" select pname, pimg_save_nm,  price, view_cnt ");
 		sql.append(" , to_char(reg_date, 'yyyy-mm-dd') reg_date ");
-		sql.append(" from product order by product_cd asc ");
+		sql.append(" from product ");
+		sql.append(" where product_cd > ? and product_cd <= ? ");
+		sql.append(" order by product_cd asc ");
 		
 		try {
 			Connection conn = new ConnectionFactory().getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
-		
+			pstmt.setInt(1, (idx-1)*4 );
+			pstmt.setInt(2, idx*4 );
+			
 			ResultSet rs = pstmt.executeQuery();
 			
 			while(rs.next()){
@@ -37,6 +41,34 @@ public class ProductDAO {
 				product.setPrice(rs.getInt(3));
 				product.setView_cnt(rs.getInt(4));
 				product.setReg_date(rs.getString(5));
+				productList.add(product);
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return productList;
+	}
+	
+	// 오버로딩(전체 게시물 수) 
+	public List<ProductVO> selectAllProduct(){
+		
+		List<ProductVO> productList = new ArrayList<>();
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append(" select pname ");
+		sql.append(" from product ");
+		
+		try {
+			Connection conn = new ConnectionFactory().getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				ProductVO product = new ProductVO();
 				productList.add(product);
 			}
 			

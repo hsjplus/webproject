@@ -12,7 +12,16 @@
 	링크는 걸려있는것도 있고 없는것도 있는데, #으로 검색하시면 연결되지 않는  링크가 나오게됩니다.
 -->
 <%
-	List<ProductVO> list = new ProductDAO().selectAllProduct();
+	String idx = request.getParameter("idx");
+	
+	if(idx == null){
+		idx = "1";
+	}
+	
+	System.out.println(idx);
+	
+	List<ProductVO> totalList = new ProductDAO().selectAllProduct();
+	List<ProductVO> list = new ProductDAO().selectAllProduct( Integer.parseInt(idx) );
 	pageContext.setAttribute("list", list);
 %>
 
@@ -156,8 +165,19 @@
             </c:forEach>
             </div>
             <!--  상품 게시 끝 -->
-          
+            <br/><br/>
+            <%
+            	 double rowSize = totalList.size();  
+            	 int idxSize = (int)Math.ceil(rowSize / 4);
+            	 pageContext.setAttribute("idxSize", idxSize);
+            %>
             
+ 			<c:forEach var="idx" begin="1" end="${idxSize }">
+ 				[<a href="/project1/index.jsp?idx=${idx}"> ${idx} </a>] &nbsp;
+ 			</c:forEach>
+       
+            
+            <br/>
             <a href="<%=request.getContextPath() %>/product/productForm.jsp">
             <button type="button" class="btn btn-default navbar-btn">상품 입력</button></a>
 			        
